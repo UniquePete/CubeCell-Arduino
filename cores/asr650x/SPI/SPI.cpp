@@ -193,7 +193,10 @@ uint8_t SPIClass::transfer(uint8_t data)
 		while(SPI_1_SpiUartGetRxBufferSize() == 0)
 		{
 			timeout++;
-			if(timeout > spi_TIMEOUT )break;
+			if (timeout > spi_TIMEOUT ) {
+				delay(2);
+				break;
+			}
 		}
 		if(timeout > spi_TIMEOUT ){}
 		else
@@ -210,7 +213,10 @@ uint8_t SPIClass::transfer(uint8_t data)
 		while(SPI_2_SpiUartGetRxBufferSize() == 0)
 		{
 			timeout++;
-			if(timeout > spi_TIMEOUT )break;
+			if (timeout > spi_TIMEOUT ) {
+				delay(2);
+				break;
+			}
 		}
 		if(timeout > spi_TIMEOUT ){}
 		else
